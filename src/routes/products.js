@@ -2,7 +2,7 @@ import { Router } from 'express';
 import fs from 'fs';
 
 const router = Router() 
-const path = './data/products.json' 
+const path = '../data/products.json' 
 
 const readProducts = () => {
     const data = fs.readFileSync(path) 
