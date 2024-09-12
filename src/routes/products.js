@@ -23,7 +23,12 @@ router.get('/:pid', (req, res) => {
     const products = readProducts() 
     const product = products.find(p => p.id == req.params.pid) 
     if (product) {
-        res.json(product) 
+        res.render('home',{
+            title: product.title,
+            description: product.description,
+            price: product.price,
+            code: product.code
+        })
     } else {
         res.status(404).json({ error: 'Producto no encontrado' }) 
     }

@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "prod2",
+    "description": "lorem",
+    "code": 79795,
+    "stock": 89,
+    "price": 700,
+    "category": "cat2",
+    "status": true
+  },
+  {
+    "id": 2,
+    "title": "prod2",
+    "description": "lorem",
+    "code": 79795,
+    "stock": 89,
+    "price": 700,
+    "category": "cat2",
+    "status": true
+  }
+]
