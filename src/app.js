@@ -11,8 +11,17 @@ const app = express()
 const PORT = process.env.PORT || 8080 
 const httpServer = app.listen(PORT,()=>console.log(`Listening in ${PORT}`))
 
+let logs=[]
+
 const io = new Server(httpServer)
-io.on('conection',(socketClient)=>{
+io.on('connection',(socketClient)=>{
+    socketClient.on('authenticated',user=>{
+        socketClient.on('message',data=>{
+            logs.push(data)
+            io.emit('logs',logs)
+        })
+        socketClient.broadcast.emit('newuser',user)
+    })
     console.log(`Conectado, id:${socketClient.id}`)
 })
 
